@@ -2,7 +2,7 @@ const conn = require('../connection/connection')
 const router = require('express').Router()
 
 // Add Karyawan
-router.post('/addKaryawan', (req, res) => {
+router.post('/addKaryawan', async (req, res) => {
     const {nama, tahun_lahir, kota_kelahiran, status_nikah} = req.body
     const sql = `insert into karyawan (nama, tahun_lahir, kota_kelahiran, status_nikah) value
                  ('${nama}', '${tahun_lahir}', '${kota_kelahiran}', '${status_nikah}') `
